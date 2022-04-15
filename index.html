@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" href="https://bcw.blob.core.windows.net/public/img/9977764104160066">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/style/main.css">
+  <link rel="stylesheet" href="assets/style/style.css">
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/@mdi/font@5.9.55/css/materialdesignicons.min.css'>
+  <title>Inspire</title>
+</head>
+
+<body>
+  <header>
+  </header>
+
+  <main class="cover-img">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-6 h-75 d-flex align-items-center justify-content-center" id="time">
+          <!-- time -->
+          <h1>10:00</h1>
+        </div>
+        <div class="col-6 h-75 d-flex align-items-center justify-content-center" id="todo">
+          <!-- to do -->
+          <div class="card m-3">
+            <h5 class="card-header text-light bg-dark">To Do:</h5>
+            <div class="card-body">
+              <p class="card-text text-wrap" id="tasks">
+                <!-- Tasks will drop here -->
+              </p>
+            </div>
+            <form onsubmit="app.tasksController.addTask()">
+              <div class="m-3 d-flex">
+                <input type="text" class="form-control text-wrap m-1" minlength="3" required maxlength="50"
+                  placeholder="Pet the dog." id="description">
+                <button class="btn btn-outline-secondary m-1" type="submit">+</button>
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+      <div class="d-flex space-between">
+        <div class="col-3" id="image-name">
+          <!-- img tag -->
+          <h3>Image name</h3>
+        </div>
+        <div class="col-6 text-center" id="quote">
+          <!-- quote tag -->
+          <h3>quote Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+        </div>
+        <div class="col-3 text-end" id="weather">
+          <!-- weather tag -->
+
+        </div>
+      </div>
+    </div>
+    </div>
+  </main>
+  <footer class="bg-dark text-light">
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.10/dist/sweetalert2.all.min.js"
+    integrity="sha256-hw7v8jZF/rFEdx1ZHepT4D73AFTHLu/P9kEyrNesRyc=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.23.0/axios.min.js"></script>
+  <script src="app/main.js" type="module"></script>
+</body>
+
+</html>
