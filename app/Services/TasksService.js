@@ -22,13 +22,13 @@ class TasksService {
 
   async addTask(formData) {
     const res = await sandboxApi.post('todos', formData)
-    console.log('from the service:' + res)
+    // console.log('from the service:' + res)
     const newTask = new Task(res.data)
     ProxyState.tasks = [newTask, ...ProxyState.tasks]
   }
 
   async removeTask(id) {
-    console.log('made it to service')
+    // console.log('made it to service')
     const res = await sandboxApi.delete('todos/' + id)
     ProxyState.tasks = ProxyState.tasks.filter(t => t.id !== id)
   }

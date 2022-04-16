@@ -1,7 +1,5 @@
 import { ProxyState } from "../AppState.js";
-import { Task } from "../Models/Task.js";
 import { tasksService } from "../Services/TasksService.js";
-// import { loadState, saveState } from "../Utils/LocalStorage.js"
 import { Pop } from "../Utils/Pop.js";
 
 
@@ -58,8 +56,8 @@ export class TasksController {
 
     }
   }
-
   markComplete(id) {
+    // debugger
     tasksService.markComplete(id)
   }
 }

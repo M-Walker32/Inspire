@@ -6,11 +6,10 @@ class AppState extends EventEmitter {
   values = []
   /** @type {import('./Models/Task').Task[]} */
   tasks = []
-  /** @type {import('./Models/Weather').Weather} */
-  weather = null;
-  // /** @type {import('./Models/Quote').Quote[]} */
-  // Quote = null
-
+  // /** @type {import('./Models/Weather').Weather} */
+  // weather = null;
+  /** @type {import('./Models/Quote').Quote} */
+  quote = null;
   // /** @type {import('./Models/Image').Image[]} */
   // Image = null
 
