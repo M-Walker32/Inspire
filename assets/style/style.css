@@ -3,10 +3,25 @@
   background-size: cover;
   position: absolute;
   top: 0%;
+  left: 0%;
   width: 100%;
 }
 
-.bg-transparent{
-  background-color: #C1F1FC;
-  opacity: 30%;
+.bg-custom{
+  color: aliceblue;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin: 1em;
+  padding: 1em;
+  border-radius: 10px;
+  min-height: 10vh;
+  background-color: #31333336;
+  align-items: center;
+  justify-content: center;
 }
+
+.time{
+  font-size: 6em;
+  color: aliceblue;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.438);
+}
+

@@ -8,7 +8,7 @@ export class Weather {
 
   get WTemplate() {
     return `
-    <h1 class="selectable" onclick="app.weathersController.convert()">${this.temp} ${this.degree ? 'Fº' : 'Cº'}</h1>
+    <h1 class="selectable text-end" onclick="app.weathersController.convert()">${this.temp} ${this.degree ? 'Fº' : 'Cº'}</h1>
   `
   }
 }

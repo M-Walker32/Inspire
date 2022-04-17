@@ -4,6 +4,7 @@ import { Pop } from "../Utils/Pop.js";
 
 function drawImage() {
   const image = ProxyState.image
+  // @ts-ignore
   document.getElementById('cover-img').src = ProxyState.image.image
 }
 
