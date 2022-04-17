@@ -1,18 +1,15 @@
-// export class Weather {
-//   constructor(data) {
-//     this.id = data.id
-//     this.name = data.name
-//     this.temp = data.main.temp
-//     this.weather = data.weather.description
-//   }
+export class Weather {
+  constructor(data) {
+    this.id = data.id
+    this.name = data.name
+    this.temp = data.main.temp
+    this.degree = true
+  }
 
-//   get Template() {
-//     return `
-// <div>
-// <h1>${this.temp}º</h1>
-// <h5 class="mdi mdi-weather-cloudy">${this.weather}</h5>
-// </div>
-// `
-//   }
-
-// }
+  get WTemplate() {
+    return `
+    <h1>${this.temp}º</h1>
+    <button class="btn btn-primary" onclick="app.weathersController.convert()">Convert</button>
+  `
+  }
+}

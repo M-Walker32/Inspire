@@ -4,7 +4,7 @@ import { Pop } from "../Utils/Pop.js";
 
 function drawQuote() {
   const quote = ProxyState.quote
-  document.getElementById('quote').innerHTML = quote.Template
+  document.getElementById('quote').innerHTML = quote.QTemplate
 }
 
 async function _getQuote() {
@@ -19,6 +19,7 @@ async function _getQuote() {
 export class QuotesController {
   constructor() {
     ProxyState.on('quote', drawQuote)
-    _getQuote
+    _getQuote()
+    // drawQuote()
   }
 }

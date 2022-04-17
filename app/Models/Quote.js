@@ -5,8 +5,8 @@ export class Quote {
     this.description = data.description
   }
 
-  get Template() {
-    return `<h3 class="font-italic">${this.quote}</h3>
+  get QTemplate() {
+    return `<h3>"<i>${this.quote}</i>"</h3>
   <h5 class="on-hover">Author: ${this.author}</h5>
   `
   }
