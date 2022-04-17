@@ -12,8 +12,10 @@ class AppState extends EventEmitter {
 
    /** @type {import('./Models/Weather').Weather} */
    weather = null;
-  // /** @type {import('./Models/Image').Image[]} */
-  // Image = null
+
+    /** @type {import('./Models/Image').Image} */
+    image = null;
+
 
 }
 

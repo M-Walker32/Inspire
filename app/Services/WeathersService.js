@@ -6,9 +6,9 @@ class WeathersService {
   async getWeather() {
     // debugger
     const res = await inspireService.get('weather')
-    console.log(res)
+    // console.log(res)
     const weather = new Weather(res.data)
-    console.log(weather)
+    // console.log(weather)
     ProxyState.weather = weather
   }
 }
