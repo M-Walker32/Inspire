@@ -27,18 +27,22 @@ export class WeathersController {
 
   convert() {
     let temp = ProxyState.weather.temp
-    console.log(temp, ProxyState.weather.temp, ProxyState.weather.degree)
+    // debugger
     if (ProxyState.weather.degree) {
-      (temp - 273.15) + 'C'
+      temp = Math.floor((temp - 32) * (5 / 9))
       ProxyState.weather.temp = temp
-      document.getElementById('weather').innerHTML = temp
+      ProxyState.weather.degree = !ProxyState.weather.degree
+      document.getElementById('weather').innerHTML = temp.toFixed(2)
+      // console.log(temp, ProxyState.weather.temp, ProxyState.weather.degree)s
+      drawWeather()
     }
-    else {
-      (temp - 273.15) * 9 / 5 + 32 + 'F'
-      document.getElementById('weather').innerHTML = temp
+    else if (!ProxyState.weather.degree) {
+      temp = (temp * (9 / 5)) + 32
       ProxyState.weather.temp = temp
+      ProxyState.weather.degree = !ProxyState.weather.degree
+      document.getElementById('weather').innerHTML = temp.toFixed(2)
+      // console.log(temp, ProxyState.weather.temp, ProxyState.weather.degree)
+      drawWeather()
     }
-    drawWeather()
-    ProxyState.weather.degree = !ProxyState.weather.degree
   }
 }

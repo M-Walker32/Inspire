@@ -2,14 +2,13 @@ export class Weather {
   constructor(data) {
     this.id = data.id
     this.name = data.name
-    this.temp = data.main.temp
+    this.temp = Math.floor((data.main.temp - 273.15) * 9 / 5 + 32)
     this.degree = true
   }
 
   get WTemplate() {
     return `
-    <h1>${this.temp}º</h1>
-    <button class="btn btn-primary" onclick="app.weathersController.convert()">Convert</button>
+    <h1 class="selectable" onclick="app.weathersController.convert()">${this.temp} ${this.degree ? 'Fº' : 'Cº'}</h1>
   `
   }
 }
