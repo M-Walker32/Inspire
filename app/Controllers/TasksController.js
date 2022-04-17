@@ -1,6 +1,8 @@
 import { ProxyState } from "../AppState.js";
+import { sandboxApi } from "../Services/AxiosService.js";
 import { tasksService } from "../Services/TasksService.js";
 import { Pop } from "../Utils/Pop.js";
+
 
 
 function drawTasks() {
@@ -9,6 +11,25 @@ function drawTasks() {
   ProxyState.tasks.forEach(t => template += t.TaskTemplate)
   document.getElementById('tasks').innerHTML = template
 }
+
+async function drawCount() {
+  try {
+    const res = await sandboxApi.get('todos')
+    const tasks = res.data
+    let count = 0
+    for (let i = 0; i < tasks.length; i++) {
+      const element = tasks[i]
+      if (element.completed) { count++ }
+      console.log(count)
+      document.getElementById('count').innerHTML = `${count} completed`
+    }
+  }
+  catch (error) {
+    console.log(error)
+    Pop.toast(error.message)
+  }
+}
+
 
 async function _getAllTasks() {
   try {
@@ -22,6 +43,7 @@ async function _getAllTasks() {
 export class TasksController {
   constructor() {
     ProxyState.on('tasks', drawTasks)
+    ProxyState.on('tasks', drawCount)
     _getAllTasks()
   }
   async addTask() {
